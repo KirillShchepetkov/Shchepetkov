@@ -60,3 +60,4 @@ total_home_works = 18
 print(total_students>total_home_works)
 print(total_home_works<=total_students)
 print(total_students!=total_home_works)
+
