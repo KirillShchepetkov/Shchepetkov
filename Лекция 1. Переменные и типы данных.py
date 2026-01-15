@@ -134,3 +134,39 @@ print(type(element_1))
 print(type(element_2))
 print(type(element_3))
 print(type(element_4))
+
+#Задача №8 (Повторение: Арифметические операции, преобразование типов, переопределение)
+
+#У вас есть три переменные:
+#price = "150" (строка)
+#quantity = 4 (целое число)
+#discount = 10 (целое число, скидка в процентах)
+
+#Преобразуйте переменную price в целое число.
+#Рассчитайте общую стоимость без скидки: price * quantity. Сохраните результат в переменную total.
+#Рассчитайте размер скидки в денежных единицах по формуле: (total * discount) / 100. Сохраните результат в переменную discount_amount.
+#Переопределите переменную total, вычтя из неё размер скидки (discount_amount).
+#Выведите на экран три значения (каждое с новой строки):
+#Общую стоимость без скидки
+#Размер скидки
+#Итоговую стоимость со скидкой
+
+#Решение:
+
+price = "150"
+quantity = 4
+discount = 10
+
+price = int(price)
+total_without_discount = price * quantity
+
+
+
+discount_amount = (total_without_discount * discount) / 100
+
+
+total_with_discount = total_without_discount - discount_amount
+
+print(total_without_discount)
+print(discount_amount)
+print(total_with_discount)
