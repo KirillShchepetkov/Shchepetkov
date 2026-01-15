@@ -160,13 +160,35 @@ discount = 10
 price = int(price)
 total_without_discount = price * quantity
 
-
-
 discount_amount = (total_without_discount * discount) / 100
-
 
 total_with_discount = total_without_discount - discount_amount
 
 print(total_without_discount)
 print(discount_amount)
 print(total_with_discount)
+
+
+#Задача №9 (Повторение: операции сравнения, преобразование типов, именование)
+
+#Создайте две переменные:
+
+#hours_str — строку со значением "40" (количество часов).
+#rate — целое число со значением 500 (ставка в час).
+#Преобразуйте hours_str в целое число и сохраните в переменную hours_int.
+#Рассчитайте заработную плату по формуле: hours_int * rate. Сохраните результат в переменную salary.
+#Используя операции сравнения, проверьте и выведите результат (True или False) для двух условий:
+#Заработная плата (salary) больше 15000.
+#Количество часов (hours_int) не равно rate
+
+#Решение:
+
+hours_str = "40"
+rate =  500
+
+hours_int = int(hours_str)
+
+salary = hours_int * rate
+
+print(salary > 15000)
+print(hours_int != rate)
