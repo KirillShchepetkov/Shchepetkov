@@ -111,3 +111,26 @@ print(type(data))
 data = int(data)
 
 print(type(data))
+
+#Задача №7 (Раздел: Классификация по типам данных)
+
+#У вас есть список разных значений:
+#my_data = [42, 3.14, "Hello", True, None]
+#Пройдитесь по каждому элементу этого списка (например, с помощью цикла for или вручную по индексу).
+#Для каждого элемента определите и выведите на экран, к какому базовому/скалярному типу данных в Python он относится. В вашем ответе должны фигурировать только названия типов: int, float, str, bool, NoneType.
+#Подсказка: для типа None функция type() вернёт <class 'NoneType'>.
+
+#Решение:
+my_data = [42, 3.14, "Hello", True, None]
+
+element_0 = my_data[0]
+element_1 = my_data[1]
+element_2 = my_data[2]
+element_3 = my_data[3]
+element_4 = my_data[4]
+
+print(type(element_0))
+print(type(element_1))
+print(type(element_2))
+print(type(element_3))
+print(type(element_4))
