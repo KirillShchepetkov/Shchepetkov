@@ -301,3 +301,26 @@ print(temperature_in_house < temperature_like)
 print(temperature_in_house != temperature_like)
 print(temperature_like >= temperature_in_house)
 
+# Задача №15 (Раздел: Преобразование типов данных)
+#
+# У вас есть три переменные:
+# x = "15.5" (строка, представляющая дробное число)
+# y = 4 (целое число)
+# z = False (булево значение)
+
+# Преобразуйте переменную x в число с плавающей точкой (float).
+# Преобразуйте переменную z в целое число (int).
+# Вычислите и выведите на экран результат выражения: преобразованный_x * y - преобразованный_z
+
+#Решение:
+
+x = "15.5"
+y = 4
+z = False
+
+x_float = float(x)
+z_int = int(z)
+
+result = x_float * y - z_int
+print(result)
+
