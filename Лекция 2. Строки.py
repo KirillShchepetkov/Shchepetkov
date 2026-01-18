@@ -125,3 +125,35 @@ print(substring2)
 print(substring3)
 print(substring4)
 
+# Задача №5 (Раздел: Базовые методы строк)
+#
+# Дана строка:
+# log_line = "ERROR: File 'data.txt' not found at 2024-05-15 14:30:00"
+#
+# Проверьте, начинается ли строка с подстроки "ERROR" (используя метод строк).
+# Проверьте, заканчивается ли строка подстрокой "14:30:00" (используя метод строк).
+# Найдите и выведите индекс (позицию) первого вхождения подстроки "not" в строке.
+# Замените в строке слово "ERROR" на "WARNING".
+# Разделите исходную строку на две части по подстроке " at " (с пробелами) и сохраните результат в список. Выведите этот список.
+#
+# Вывод организуйте в столбик (каждый ответ с новой строки, всего 5 строк).
+
+#Решение
+
+log_line = "ERROR: File 'data.txt' not found at 2024-05-15 14:30:00"
+
+start_result = log_line.startswith("ERROR:")
+
+end_result = log_line.endswith("14:30:00")
+
+log_line1 = log_line.find("not")
+
+new_log_line = log_line.replace("ERROR","WARNING")
+
+parts = log_line.split( " at " )
+
+print(start_result)
+print(end_result)
+print(log_line1)
+print(new_log_line)
+print(parts)
