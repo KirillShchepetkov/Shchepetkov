@@ -236,3 +236,35 @@ print(number_full)
 print(number_back)
 print(symbol_5)
 print(symbol_7)
+
+# Задача №8 (Раздел: Базовые методы строк)
+# Дана строка:
+# log_message = " WARNING: Disk space is below 15% "
+#
+# Удалите лишние пробелы с обоих концов строки.
+# Проверьте, начинается ли очищенная строка с подстроки "WARNING".
+# Найдите и выведите индекс (позицию) подстроки "below" в очищенной строке.
+# Замените в очищенной строке "15%" на "10%".
+# Приведите очищенную строку к нижнему регистру.
+# Выполните все шаги последовательно, используя результат предыдущего шага.
+# Выведите на экран результат каждого шага (всего 5 строк).
+
+#Решение
+
+log_message = " WARNING: Disk space is below 15% "
+
+trimmed_log_message = log_message.strip()
+
+start_result = trimmed_log_message.startswith("WARNING")
+
+index_string = trimmed_log_message.find("below")
+
+new_trimmed_log_message = trimmed_log_message.replace("15%", "10%")
+
+down_trimmed_log_message = new_trimmed_log_message .lower()
+
+print(trimmed_log_message)
+print(start_result)
+print(index_string)
+print(new_trimmed_log_message)
+print(down_trimmed_log_message)
