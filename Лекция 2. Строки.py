@@ -268,3 +268,45 @@ print(start_result)
 print(index_string)
 print(new_trimmed_log_message)
 print(down_trimmed_log_message)
+
+# Задача №9 (Раздел: F-строки и длина строки)
+#
+# У вас есть данные:
+# project_name = "Autotest_Framework"
+# total_modules = 8
+# completed_modules = 5
+#
+# Используя f-строку, создайте и выведите строку:
+# "Проект: [project_name]"
+#
+# Используя f-строку, создайте и выведите строку:
+# "Модули: [completed_modules]/[total_modules]"
+#
+# Используя f-строку с выражением, создайте и выведите строку:
+# "Завершено: [процент]%"
+#
+# (Рассчитайте процент завершения как (completed_modules / total_modules) * 100.
+# Ограничьте вывод до целого числа, используя форматирование в f-строке: {выражение:.0f}).
+# Выведите длину строки project_name.
+# Вывод организуйте в столбик (каждый ответ с новой строки, всего 4 строки).
+
+project_name = "Autotest_Framework"
+total_modules = 8
+completed_modules = 5
+
+project = f"Проект: {project_name}"
+
+modules_info = f"Модули: {completed_modules}/{total_modules}"
+
+procent_final = f"{(completed_modules) / (total_modules) * 100.0:.0f}"
+
+final = f"Завершено: {procent_final}%"
+
+length = len(project_name)
+
+print(project)
+print(modules_info)
+print(final)
+print(length)
+
+
