@@ -192,3 +192,47 @@ string3  = f"Прогресс: {(completed_tasks / total_tasks) * 100:.1f}%"
 print(string1)
 print(string2)
 print(string3)
+
+# Задача №7 (Раздел: Доступ к символам, срезы, длина)
+#
+# Дана строка:
+# serial_number = "ABC-1234-XYZ"
+#
+# Выведите на экран:
+#
+# Длину этой строки.
+# Первые 3 символа строки.
+# Последние 3 символа строки.
+# Используя срезы, получите и выведите:
+# Только цифровую часть (цифры между дефисами).
+# Символы строки в обратном порядке.
+# Используя индексацию, выведите:
+# 5-й символ строки (считая с 1).
+# 7-й символ строки (считая с 1).
+# Вывод организуйте в столбик (каждый ответ с новой строки, всего 7 строк).
+
+#Решение
+
+serial_number = "ABC-1234-XYZ"
+
+length = len(serial_number)
+
+number_3 = serial_number[0:3]
+
+number_3_back = serial_number[-3:]
+
+number_full = serial_number[4:8]
+
+number_back = serial_number[::-1]
+
+symbol_5 = serial_number[4]
+
+symbol_7 = serial_number[6]
+
+print(length)
+print(number_3)
+print(number_3_back)
+print(number_full)
+print(number_back)
+print(symbol_5)
+print(symbol_7)
