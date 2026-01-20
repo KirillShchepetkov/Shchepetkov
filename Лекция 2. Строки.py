@@ -348,3 +348,39 @@ print(invoice_3)
 print(year)
 print(numb)
 print(trimmed_invoice)
+
+# Задача №11 нового цикла (Раздел: Базовые методы строк)
+#
+# Дана строка:
+# error_log = "ERROR: User 'admin' not authorized; ERROR: Disk space critical; WARNING: High memory usage"
+#
+# Проверьте, сколько раз подстрока "ERROR" встречается в строке (используйте метод строк).
+# Найдите и выведите индекс (позицию) второго вхождения подстроки "ERROR" в строке.
+# Замените все вхождения "ERROR" на "FAIL".
+# Разделите исходную строку на отдельные сообщения по разделителю "; " (точка с запятой и пробел). Сохраните результат в список и выведите его.
+# Проверьте, содержит ли исходная строка подстроку "WARNING" (используйте метод строк).
+# Вывод организуйте в столбик (каждый ответ с новой строки, всего 5 строк).
+
+#Решение
+
+error_log = "ERROR: User 'admin' not authorized; ERROR: Disk space critical; WARNING: High memory usage"
+
+error_log_1 = error_log.count("ERROR")
+
+first_index = error_log.find("ERROR")
+
+second_index = error_log.find("ERROR", first_index + 1)
+
+new_error_log = error_log.replace("ERROR", "FAIL")
+
+messages = error_log.split("; ")
+
+warning_str = error_log.find("WARNING")
+has_warning = warning_str != -1
+
+print(error_log_1)
+print(first_index)
+print(second_index)
+print(new_error_log)
+print(messages)
+print(has_warning)
