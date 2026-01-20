@@ -470,5 +470,36 @@ print(index_secret)
 print(index_three)
 print(length)
 
+# Задача №14 нового цикла (Раздел: Базовые методы строк)
+#
+# Дана строка:
+# server_response = "HTTP/1.1 200 OK\nContent-Type: text/html\n\n<!DOCTYPE html><html>"
+#
+# Проверьте, начинается ли строка с подстроки "HTTP".
+# Проверьте, содержит ли строка подстроку "200 OK".
+# Найдите и выведите индекс (позицию), где начинается подстрока "<!DOCTYPE".
+# Замените в строке "text/html" на "application/json".
+# Разделите строку на части по разделителю "\n" (символ переноса строки). Сохраните результат в список и выведите этот список.
+# Вывод организуйте в столбик (каждый ответ с новой строки, всего 5 строк).
+
+#Решение:
+
+server_response = "HTTP/1.1 200 OK\nContent-Type: text/html\n\n<!DOCTYPE html><html>"
+
+string_HTTP = server_response.startswith("HTTP")
+
+string_200 = server_response.find("200 OK")
+
+string_doctype = server_response.find("<!DOCTYPE")
+
+new_text = server_response.replace("text/html", "application/json")
+
+separate = server_response.split("\n")
+
+print(string_HTTP)
+print(string_200 != -1)
+print(string_doctype)
+print(new_text)
+print(separate)
 
 
