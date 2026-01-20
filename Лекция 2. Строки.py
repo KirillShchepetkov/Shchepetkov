@@ -426,3 +426,49 @@ print(string_1)
 print(string_2)
 print(string_3)
 print(string_4)
+
+# Задача №13 нового цикла (Раздел: Длина строки, срезы, доступ к символам)
+#
+# Дана строка:
+# api_key = "sk_live_7aB3c9d2E5f4G6h8J0k"
+#
+# Выведите на экран длину этой строки.
+#
+# Используя индексацию, выведите на экран:
+# 1-й символ.
+# 4-й символ (считая с 1).
+# 10-й символ (считая с 1).
+# Используя срезы (slice), получите и выведите:
+# Префикc ключа (первые 7 символов).
+# Секретную часть ключа (символы с 8-го до конца).
+# Каждый третий символ, начиная со второго.
+# Вывод организуйте в столбик (каждый ответ с новой строки, всего 7 строк).
+
+#Решение
+
+api_key = "sk_live_7aB3c9d2E5f4G6h8J0k"
+
+length = len(api_key)
+
+index_1 = api_key[0]
+
+index_2 = api_key[3]
+
+index_10 = api_key[9]
+
+index_first_7 = api_key[0:7]
+
+index_secret = api_key[7:]
+
+index_three = api_key[1::3]
+
+print(index_1)
+print(index_2)
+print(index_10)
+print(index_first_7)
+print(index_secret)
+print(index_three)
+print(length)
+
+
+
