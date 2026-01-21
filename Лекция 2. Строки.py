@@ -502,4 +502,161 @@ print(string_doctype)
 print(new_text)
 print(separate)
 
+# Задача №15 (Новый раунд: F-строки и длина)
+#
+# У вас есть данные:
+# report_name = "Еженедельный_отчёт"
+# total_pages = 42
+# current_page = 17
+# Используя f-строку, создайте и выведите строку:
+# "Отчёт: [report_name]"
+# Используя f-строку, создайте и выведите строку:
+# "Страница: [current_page] из [total_pages]"
+# Выведите длину строки report_name.
+# Используя f-строку с выражением, создайте и выведите строку:
+# "Прогресс: [процент]%"
+# (Рассчитайте процент прочитанного как (current_page / total_pages) * 100. Ограничьте вывод до одного знака после запятой, используя форматирование: {выражение:.1f}).
+# Вывод организуйте в столбик (каждый ответ с новой строки, всего 4 строки).
+
+#Решение:
+
+report_name = "Еженедельный_отчёт"
+total_pages = 42
+current_page = 17
+
+string_1 = f"Отчёт: {report_name}"
+
+string_2 = f"Страница: {current_page} из {total_pages}"
+
+length = len(report_name)
+
+proponent_2 = f"Прогресс: {(current_page / total_pages) * 100:.1f}%"
+
+print(string_1)
+print(string_2)
+print(length)
+print(proponent_2)
+
+# Задача №16 (Новый раунд: Срезы и доступ к символам)
+#
+# Дана строка:
+# transaction_id = "TX-9876-5432-ABCD"
+#
+# Используя индексацию, выведите на экран:
+#
+# 1-й символ строки.
+# 4-й символ строки (считая с 1).
+# 10-й символ строки (считая с 1).
+# Используя срезы (slice), выведите на экран:
+# Первую группу цифр (4 цифры после первого дефиса).
+# Вторую группу цифр (4 цифры после второго дефиса).
+# Буквенную часть (символы после третьего дефиса).
+# Каждый второй символ строки, начиная с первого.
+# Вывод организуйте в столбик (каждый ответ с новой строки, всего 7 строк).
+
+#Решение:
+
+transaction_id = "TX-9876-5432-ABCD"
+
+index_1 = transaction_id[0]
+
+index_2 = transaction_id[3]
+
+index_10 = transaction_id[9]
+
+slice_1 = transaction_id[3:7]
+
+slice_2 = transaction_id[8:12]
+
+book = transaction_id[-4:]
+
+slice_second = transaction_id[::2]
+
+print(index_1)
+print(index_2)
+print(index_10)
+print(slice_1)
+print(slice_2)
+print(book)
+print(slice_second)
+
+# Задача 17 (Новый раунд: Базовые методы строк)
+#
+# Дана строка:
+# log_entry = " [INFO] Connection established with database 'prod_db' at 10:30:15 "
+#
+# Удалите лишние пробелы с обоих концов строки.
+# Проверьте, начинается ли очищенная строка с "[" (открывающей квадратной скобки).
+# Найдите и выведите индекс (позицию) подстроки "'prod_db'" (включая одинарные кавычки) в очищенной строке.
+# Замените в очищенной строке "prod_db" на "test_db" (обратите внимание: кавычки должны остаться).
+# Приведите очищенную строку к нижнему регистру.
+# Выполните все шаги последовательно, используя результат предыдущего шага.
+# Выведите на экран результат каждого шага (всего 5 строк).
+
+#Решение:
+
+log_entry = " [INFO] Connection established with database 'prod_db' at 10:30:15 "
+
+trimmed = log_entry.strip()
+
+trimmed_start = trimmed.startswith("[")
+
+trimmed_index = trimmed.find("'prod_db'")
+
+trimmed_back = trimmed.replace("prod_db", "test_db")
+
+trimmed_down = trimmed.lower()
+
+print(trimmed)
+print(trimmed_start)
+print(trimmed_index)
+print(trimmed_back)
+print(trimmed_down)
+
+# Задача №18 (Новый раунд: Конкатенация и F-строки)
+#
+# У вас есть данные:
+# module = "Авторизация"
+# total_tests = 24
+# failed_tests = 3
+#
+# Используя конкатенацию строк, создайте и выведите строку:
+# "Модуль: [module]"
+#
+# Используя f-строку, создайте и выведите строку:
+# "Тестов: [total_tests]"
+#
+# Используя f-строку, создайте и выведите строку:
+# "Провалено: [failed_tests]"
+#
+# Используя f-строку с выражением, создайте и выведите строку:
+# "Успешно: [количество]"
+# (Рассчитайте количество успешных тестов как total_tests - failed_tests).
+#
+# Используя f-строку с выражением, создайте и выведите строку:
+# "Стабильность: [процент]%"
+# (Рассчитайте процент успешных тестов как ((total_tests - failed_tests) / total_tests) * 100.
+# Ограничьте вывод до целого числа, используя форматирование: {выражение:.0f}).
+
+#Решение:
+
+module = "Авторизация"
+total_tests = 24
+failed_tests = 3
+
+module_1 = "Модуль: " + module
+
+test_str = f"Тестов: {total_tests}"
+
+failed_str = f"Провалено: {failed_tests}"
+
+win_str = f"Успешно: {total_tests - failed_tests}"
+
+stab_str = f"Стабильность: {((total_tests - failed_tests) / total_tests) * 100:.0f}%"
+
+print(module_1)
+print(test_str)
+print(failed_str)
+print(win_str)
+print(stab_str)
 
