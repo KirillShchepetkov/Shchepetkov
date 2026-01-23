@@ -206,3 +206,75 @@ log_levels[second_index] = "NOTICE"
 
 print(log_levels)
 
+# Задача №8 по спискам (Раздел: Добавление элементов в конкретное место списка)
+#
+# У вас есть список шагов тест-кейса:
+# test_steps = ["Открыть браузер", "Ввести URL", "Ввести логин", "Нажать кнопку Войти"]
+#
+# Добавьте шаг "Закрыть браузер" в конец списка.
+# Добавьте шаг "Проверить заголовок страницы" после шага "Ввести URL" (используйте поиск индекса и метод вставки).
+# Добавьте шаг "Очистить кэш" в начало списка.
+# Добавьте шаг "Ввести пароль" перед шагом "Нажать кнопку Войти" (используйте поиск индекса и метод вставки).
+#
+# Выведите на экран:
+# Итоговый список.
+# Количество шагов в итоговом списке (длину списка).
+
+#Решение:
+
+test_steps = ["Открыть браузер", "Ввести URL", "Ввести логин", "Нажать кнопку Войти"]
+
+test_steps.append("Закрыть браузер")
+
+test_steps_index = test_steps.index("Ввести URL")
+test_steps.insert(test_steps_index + 1, "Проверить заголовок страницы")
+
+
+test_steps.insert(0, "Очистить кэш")
+
+test_steps_index_3 = test_steps.index("Нажать кнопку Войти")
+test_steps.insert(test_steps_index_3 + 1, "Ввести пароль")
+
+
+print(test_steps)
+length = len(test_steps)
+print(length)
+
+# Задача №9 по спискам (Раздел: Слияние списков и срезы)
+#
+# У вас есть два списка:
+# frontend_tools = ["React", "Vue", "Angular"]
+# backend_tools = ["Django", "Flask", "FastAPI"]
+#
+# Создайте новый список web_stack,
+# который является слиянием списка frontend_tools
+# и списка backend_tools с помощью метода .extend() (измените первый список, добавив в него второй).
+#
+# Используя срезы, создайте и сохраните в переменные:
+# Подсписок из первых трёх элементов web_stack.
+# Подсписок из последних двух элементов web_stack.
+# Подсписок, содержащий каждый второй элемент web_stack, начиная со второго.
+# Добавьте в начало списка web_stack элемент "HTML/CSS" (используя метод).
+# Выведите на экран (каждый с новой строки):
+# Итоговый список web_stack.
+# Все три подсписка, полученные срезами.
+
+#Решение:
+
+frontend_tools = ["React", "Vue", "Angular"]
+backend_tools = ["Django", "Flask", "FastAPI"]
+
+frontend_tools.extend(backend_tools)
+web_stack = frontend_tools
+
+web_stack_3 = web_stack[2:]
+print(web_stack_3)
+
+web_stack_last2 = web_stack[-2:]
+print(web_stack_last2)
+
+web_stack_second = web_stack[2::2]
+print(web_stack_second)
+
+web_stack.insert(0, "HTML/CSS")
+print(web_stack)
