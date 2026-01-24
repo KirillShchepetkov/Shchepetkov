@@ -278,3 +278,27 @@ print(web_stack_second)
 
 web_stack.insert(0, "HTML/CSS")
 print(web_stack)
+
+# Задача №10 по третьей теме (Раздел: Создание списка и получение элементов)
+#
+# Создайте список с именем browsers,
+# содержащий 4 строковых элемента — названия браузеров (например, "Chrome", "Firefox", "Safari", "Edge").
+# Элементы задайте вручную при создании списка.
+#
+# Выведите на экран (каждый с новой строки):
+# Весь список целиком.
+# Первый элемент списка.
+# Третий элемент списка.
+# Последний элемент списка (используя отрицательный индекс).
+
+browsers = ["Chrome", "Firefox", "Safari", "Edge"]
+print(browsers)
+
+first_browsers = browsers[0]
+print(first_browsers)
+
+third_protocol = browsers[2]
+print(third_protocol)
+
+last_protocol = browsers[-1]
+print(last_protocol)
