@@ -138,3 +138,62 @@ elif 14 <= age <= 17  and permission.lower() == "yes":
     print("Доступ разрешён")
 else:
     print("Доступ запрещён")
+
+# Задача №7 по условиям (Раздел: Вложенные условия)
+#
+# Напишите программу для калькулятора скидок:
+# Программа запрашивает у пользователя сумму покупки (целое число)
+# и статус клиента (regular — обычный, vip — постоянный).
+#
+# Правила расчёта скидки:
+# Если сумма покупки больше 5000:
+# Для regular → скидка 5%
+# Для vip → скидка 10%
+# Иначе (сумма покупки 5000 или меньше):
+# Для regular → скидка 0%
+# Для vip → скидка 5%
+# Программа должна вычислить размер скидки и итоговую сумму к оплате.
+# Выведите на экран (каждое с новой строки):
+# Размер скидки в рублях.
+# Итоговую сумму к оплате.
+#
+# Формулы:
+# скидка_руб = сумма_покупки * (процент_скидки / 100)
+# итоговая_сумма = сумма_покупки - скидка_руб
+#
+# Используйте вложенные условия (if внутри if).
+
+#Решение:
+
+sum_purchase = int(input("Сумма покупки: "))
+status_client = input("Cтатус клиента (regular/vip): ")
+
+if sum_purchase > 5000:
+    if status_client == "regular":
+        discount_percent = 5
+        discount_rub = sum_purchase * discount_percent / 100
+        final_sum = sum_purchase - discount_rub
+        print(discount_rub)
+        print(final_sum)
+    elif status_client == "vip":
+        discount_percent_1 = 10
+        discount_rub_1 = sum_purchase * discount_percent_1 / 100
+        final_sum_1 = sum_purchase - discount_rub_1
+        print(discount_rub_1)
+        print(final_sum_1)
+else:
+    if status_client == "regular":
+        discount_percent_2 = 0
+        discount_rub_2 = sum_purchase * discount_percent_2 / 100
+        final_sum_2 = sum_purchase - discount_rub_2
+        print(discount_rub_2)
+        print(final_sum_2)
+    elif status_client == "vip":
+        discount_percent_3 = 5
+        discount_rub_3 = sum_purchase * discount_percent_3 / 100
+        final_sum_3 = sum_purchase - discount_rub_3
+        print(discount_rub_3)
+        print(final_sum_3)
+
+
+
