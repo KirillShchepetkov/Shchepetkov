@@ -291,6 +291,7 @@ print(web_stack)
 # Третий элемент списка.
 # Последний элемент списка (используя отрицательный индекс).
 
+#Решение:
 browsers = ["Chrome", "Firefox", "Safari", "Edge"]
 print(browsers)
 
@@ -302,3 +303,23 @@ print(third_protocol)
 
 last_protocol = browsers[-1]
 print(last_protocol)
+
+# Задача №11 по спискам (Раздел: Создание списка и получение элементов)
+#
+# Вручную создайте список с именем frameworks, содержащий 4 строковых элемента
+# — названия фреймворков для автоматизации (например, "Selenium", "Playwright", "Cypress", "Appium").
+#
+# Выведите на экран (каждое с новой строки):
+#
+# Весь список целиком.
+# Первый элемент списка.
+# Последний элемент списка (используя отрицательный индекс).
+
+#Решение:
+frameworks = ["Selenium", "Playwright", "Cypress", "Appium"]
+
+print(frameworks)
+first_frameworks = frameworks[0]
+print(first_frameworks)
+last_frameworks = frameworks[-1]
+print(last_frameworks)
