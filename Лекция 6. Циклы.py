@@ -275,3 +275,13 @@ for result in results:
 # Прибавляет введённое число к total.
 # Если total становится больше или равна 100, цикл прерывается (используйте break).
 # После прерывания цикла выводит на экран: "Итоговая сумма: <total>".
+
+#Решение:
+
+total = 0
+while True:
+    number = int(input("Введите число: "))
+    total += number
+    if total >= 100:
+        print(f"Итоговая сумма: {total}")
+        break
