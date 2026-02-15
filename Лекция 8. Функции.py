@@ -205,7 +205,103 @@ for code in codes:
     print(f"Код {code}: {message}")
 
 
+# Задача №10 по функциям (Раздел: Аргументы с дефолтными значениями)
+#
+# Создайте функцию log_message, которая:
+# Принимает два параметра: level (обязательный) и message (обязательный).
+# Выводит на экран строку в формате: "[{level}] {message}".
+# Создайте функцию log_with_default, которая:
+# Принимает параметр message (обязательный) и необязательный параметр level со значением по умолчанию "INFO".
+# Внутри себя вызывает функцию log_message, передавая ей соответствующие аргументы.
+# Вызовите функцию log_with_default три раза:
+#
+# Первый раз — только с сообщением "Программа запущена".
+# Второй раз — с сообщением "Ошибка подключения" и уровнем "ERROR".
+# Третий раз — с сообщением "Отладка" и уровнем "DEBUG".
+
+# Решение:
+
+def log_message(level, message):
+    print(f"[{level}] {message}")
+
+def log_with_default(message, level = "INFO"):
+    log_message(level, message)
+
+log_with_default("Программа запущена")
+
+log_with_default("Ошибка подключения","ERROR")
+
+log_with_default("Отладка","DEBUG")
 
 
+# Задача №11 по функциям (Раздел: Возвращение данных из функций)
+#
+# Создайте функцию calculate_average, которая:
+# Принимает список чисел.
+# Возвращает среднее арифметическое этих чисел.
+# Если список пуст, функция должна возвращать 0.
+#
+# Создайте три списка:
+#
+# grades1 = [85, 90, 78, 92]
+#
+# grades2 = []
+#
+# grades3 = [45, 67, 89, 23, 56]
+#
+# Для каждого списка:
+# Вызовите функцию calculate_average.
+# Выведите результат в формате: "Среднее: {среднее}".
 
+# Решение:
+
+def calculate_average(numbers):
+    if len(numbers) == 0:
+        return 0
+    total = sum(numbers)
+    count = len(numbers)
+    return total / count
+
+
+grades1 = [85, 90, 78, 92]
+avg1 = calculate_average(grades1)
+print(f"Среднее: {avg1}")
+
+grades2 = []
+avg2 = calculate_average(grades2)
+print(f"Среднее: {avg2}")
+
+grades3 = [45, 67, 89, 23, 56]
+avg3 = calculate_average(grades3)
+print(f"Среднее: {avg3}")
+
+
+# Задача №12 по функциям (Раздел: Декораторы)
+#
+# Создайте простую функцию greet, которая:
+#
+# Принимает один аргумент — имя пользователя.
+# Возвращает строку "Привет, {name}!".
+# Создайте декоратор uppercase_decorator, который:
+# Принимает функцию как аргумент.
+# Определяет вложенную функцию wrapper, принимающую те же аргументы, что и исходная функция.
+# Внутри wrapper вызывает исходную функцию и преобразует результат в верхний регистр.
+# Возвращает результат преобразования.
+# Возвращает wrapper.
+# Примените декоратор @uppercase_decorator к функции greet.
+# Вызовите декорированную функцию с именем "Анна" и выведите результат
+
+# Решение:
+
+def uppercase_decorator(func):
+    def wrapper(name):
+        result = func(name)
+        return result.upper()
+    return wrapper
+
+@uppercase_decorator
+def greet(name):
+    return f"Привет, {name}!"
+
+print(greet("Анна"))
 
