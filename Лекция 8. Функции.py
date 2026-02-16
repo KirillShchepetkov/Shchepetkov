@@ -305,3 +305,88 @@ def greet(name):
 
 print(greet("Анна"))
 
+# Задача №13 по функциям (Раздел: Аргументы функций)
+#
+# Создайте функцию describe_person, которая принимает три обязательных параметра:
+# name — имя
+# age — возраст
+# profession — профессия
+#
+# Функция должна возвращать строку в формате:
+# "{name}, {age} лет, работает как {profession}"
+#
+# Создайте список словарей с данными о людях:
+#
+# people = [
+#     {"name": "Анна", "age": 28, "profession": "тестировщик"},
+#     {"name": "Борис", "age": 34, "profession": "разработчик"},
+#     {"name": "Виктория", "age": 42, "profession": "аналитик"}
+# ]
+# Используя цикл for и созданную функцию, выведите описание каждого человека на экран
+# При вызове функции используйте распаковку словаря: describe_person(**person)
+
+# Решение:
+
+def describe_person(name, age, profession):
+    return f"{name}, {age} лет, работает как {profession}"
+
+people = [
+     {"name": "Анна", "age": 28, "profession": "тестировщик"},
+     {"name": "Борис", "age": 34, "profession": "разработчик"},
+     {"name": "Виктория", "age": 42, "profession": "аналитик"}
+]
+
+for person in people:
+    print(describe_person(**person))
+
+
+# Задача №14 по функциям (Раздел: Аргументы с дефолтными значениями)
+#
+# Создайте функцию create_user_profile, которая принимает:
+# Обязательный параметр username.
+# Необязательные параметры со значениями по умолчанию:
+#
+# role = "user"
+# is_active = True
+#
+# Функция должна возвращать словарь с данными пользователя в формате:
+#
+# python
+# {
+#     "username": username,
+#     "role": role,
+#     "active": is_active
+# }
+# Создайте список с различными наборами аргументов:
+#
+# python
+# users_data = [
+#     {"username": "alice"},                           # только username
+#     {"username": "bob", "role": "admin"},            # username + role
+#     {"username": "charlie", "is_active": False},     # username + is_active
+#     {"username": "diana", "role": "moderator", "is_active": True}  # все параметры
+# ]
+# Для каждого элемента списка вызовите функцию create_user_profile,
+# используя распаковку словаря (**data), и выведите полученный профиль на экран.
+#
+# Каждый профиль должен выводиться с новой строки.
+
+# Решение:
+
+def create_user_profile(username, role = "user", is_active = True):
+    return {
+    "username": username,
+    "role": role,
+    "active": is_active
+ }
+
+users_data = [
+     {"username": "alice"},                           # только username
+     {"username": "bob", "role": "admin"},            # username + role
+     {"username": "charlie", "is_active": False},     # username + is_active
+     {"username": "diana", "role": "moderator", "is_active": True}  # все параметры
+ ]
+
+for data in users_data:
+    profile = create_user_profile(**data)
+    print(profile)
