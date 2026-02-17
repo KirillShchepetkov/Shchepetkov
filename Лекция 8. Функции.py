@@ -440,5 +440,19 @@ print(f"Сумма: {result[2]}")
 
 # Решение:
 
-def square(a):
-     return a * a
+def square(func):
+     def wrapper(a):
+         result = func(a**2)*2
+         return result
+     return wrapper
+
+@double_result
+
+def square():
+    print(square(5))
+
+
+
+
+
+
