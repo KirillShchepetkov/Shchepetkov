@@ -440,16 +440,18 @@ print(f"Сумма: {result[2]}")
 
 # Решение:
 
-def square(func):
+def double_result(func):
      def wrapper(a):
-         result = func(a**2)*2
-         return result
+         result = func(a)
+         return result * 2
      return wrapper
 
 @double_result
 
-def square():
-    print(square(5))
+def square(num):
+    return num ** 2
+
+print(square(5))
 
 
 
