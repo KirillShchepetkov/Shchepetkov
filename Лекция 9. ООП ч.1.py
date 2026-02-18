@@ -213,3 +213,65 @@ device_3.display_info()
 print(device_3.get_total())
 
 
+# Задача №6 по ООП (Раздел: Конструктор init и методы)
+#
+# Создайте класс Book.
+# В конструкторе __init__ определите следующие атрибуты:
+#  title — название книги
+#  author — автор
+#  year — год издания
+#  available — доступность (булево значение, по умолчанию True)
+#
+# Создайте метод get_info, который возвращает строку:
+#  "{title}, {author} ({year})" (например, "Война и мир, Лев Толстой (1869)")
+#
+# Создайте метод borrow, который:
+#  Проверяет, доступна ли книга (available == True).
+#  Если доступна, меняет available на False и возвращает True.
+#  Если не доступна, возвращает False (книгу нельзя взять).
+#  Создайте метод return_book, который устанавливает available в True.
+#  Создайте три объекта класса Book с разными данными.
+#
+# Выполните последовательно:
+#  Вызовите get_info для каждой книги и выведите результат.
+#  Попробуйте взять (borrow) первую книгу и выведите результат (True/False).
+#  Попробуйте взять эту же книгу ещё раз и выведите результат.
+#  Верните (return_book) первую книгу.
+#  Снова попробуйте взять первую книгу и выведите результат.
+
+# Решение:
+
+class Book:
+    def __init__(self,title, author, year,available = True):
+        self.title = title
+        self.author = author
+        self.year = year
+        self.available = available
+    def get_info(self):
+        return (f"{self.title}, {self.author} ({self.year})")
+
+    def borrow(self):
+        if self.available:
+            self.available = False
+            return True
+        else:
+            return False
+
+    def return_book(self):
+        self.available = True
+
+book_1 = Book("Горе от ума", "Грибоедов", 1874, True)
+book_2 = Book("Кавказский пленник", "Толстой", 1879, True)
+book_3 = Book("Идиот", "Достоевский", 1883, False)
+
+print(book_1.get_info())
+print(book_2.get_info())
+print(book_3.get_info())
+
+print(book_1.borrow())
+
+print(book_1.borrow())
+
+book_1.return_book()
+
+print(book_1.borrow())
