@@ -323,3 +323,29 @@ first_frameworks = frameworks[0]
 print(first_frameworks)
 last_frameworks = frameworks[-1]
 print(last_frameworks)
+
+# Задача №12 (третья тема: Списки)
+#
+# Вручную создайте список с именем environments, содержащий 4 строковых элемента —
+# названия сред тестирования (например, "dev", "test", "staging", "prod").
+#
+# Выведите на экран (каждое с новой строки):
+# Весь список целиком.
+# Первый элемент списка.
+# Последний элемент списка (используя отрицательный индекс).
+# Длину списка (количество элементов).
+
+#Решение:
+
+environments = ["dev", "test", "staging", "prod"]
+
+print(environments)
+
+first_environments = environments[0]
+print(first_environments)
+
+last_environments = environments[-1]
+print(last_environments)
+
+length = len(environments)
+print(length)
