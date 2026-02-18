@@ -744,3 +744,31 @@ print(string_5)
 
 start_result = test_suite.startswith("Рег")
 print(start_result)
+
+# Задача №21 (вторая тема: Строки)
+#
+# Дана строка:
+# file_name = "document_2025.pdf"
+#
+# Используя метод строк, проверьте, начинается ли строка с подстроки "document".
+# Используя метод строк, проверьте, заканчивается ли строка на ".pdf".
+# Используя срез (slice), получите название файла без расширения (часть до точки).
+#
+# Выведите на экран (каждое с новой строки):
+# Результат первой проверки (True/False)
+# Результат второй проверки (True/False)
+# Название файла без расширения
+
+#Решение:
+
+file_name = "document_2025.pdf"
+
+start_result = file_name.startswith("document")
+print(start_result)
+
+end_result = file_name.endswith(".pdf")
+print(end_result)
+
+dot_index = file_name.find(".")
+substring = file_name[:dot_index]
+print(substring)
