@@ -426,6 +426,31 @@ print(sum_1)
 print(sum_2)
 print(final_sum)
 
+# Задача №20 (первая тема: Переменные и типы данных)
+#
+# Создайте три переменные:
+#
+# app_name — присвойте ей строковое значение "TestRunner"
+# version — присвойте ей дробное число 2.5
+# is_active — присвойте ей булево значение True
+#
+# Выведите на экран (каждое с новой строки):
+#
+# Значение переменной app_name
+# Тип данных переменной version
+# Значение переменной is_active
+
+# Решение:
+
+app_name = "TestRunner"
+version =  2.5
+is_active =  True
+
+print(app_name)
+print(type(version))
+print(is_active)
+
+
 
 
 
