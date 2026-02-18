@@ -160,3 +160,56 @@ print(counter_1.decrement())
 print(counter_1.reset())
 
 print(counter_1.increment())
+
+
+# Задача №5 по ООП (Раздел: Общие атрибуты и методы класса)
+#
+# Создайте класс Device.
+#
+# Добавьте в класс общий атрибут total_devices со значением 0.
+# Этот атрибут будет считать количество созданных устройств.
+#
+# В конструкторе __init__:
+#  Принимайте параметры self, name и type.
+#  Сохраняйте name и type как атрибуты экземпляра.
+#  Увеличивайте общий атрибут total_devices на 1 при создании каждого нового объекта.
+# Создайте метод display_info, который выводит информацию об устройстве:
+# "Устройство: {name}, тип: {type}"
+# Создайте метод класса get_total, который возвращает текущее значение total_devices.
+# Создайте три объекта класса Device с разными названиями и типами.
+# Для каждого объекта вызовите метод display_info.
+# Вызовите метод класса get_total и выведите результат на экран.
+#
+# Подсказка: Для метода класса используйте декоратор @classmethod.
+
+# Решение:
+
+class Device:
+    total_devices = 0
+    def __init__(self, name,type):
+        self.name = name
+        self.type = type
+        type(self).total_devices += 1
+
+    def display_info(self):
+         print(f"Устройство: {self.name}, тип: {self.type}")
+
+    @classmethod
+    def get_total(cls):
+         return cls.total_devices
+
+
+device_1 = Device("Xiaomi", "phone")
+device_2 = Device("Apple", "macbook")
+device_3 = Device("Dexp", "computer")
+
+device_1.display_info()
+print(device_1.get_total())
+
+device_2.display_info()
+print(device_2.get_total())
+
+device_3.display_info()
+print(device_3.get_total())
+
+
