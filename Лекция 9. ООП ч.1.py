@@ -113,5 +113,50 @@ test3.display_info()
 print(test3.is_passed())
 
 
+# Задача №4 по ООП (Раздел: Понимание параметра self)
+#
+# Создайте класс Counter.
+#
+# В конструкторе __init__ создайте атрибут экземпляра count со значением 0.
+# Создайте метод increment, который увеличивает значение count на 1 и возвращает новое значение.
+# Создайте метод decrement, который уменьшает значение count на 1 и возвращает новое значение.
+# Создайте метод reset, который устанавливает count в 0 и возвращает "Сброс выполнен".
+# Создайте один объект класса Counter.
+#
+# Выполните последовательно:
+# Вызовите increment 3 раза, каждый раз выводя результат.
+# Вызовите decrement 1 раз, выведите результат.
+# Вызовите reset, выведите результат.
+# Снова вызовите increment, выведите результат.
+#
+# Каждый вызов метода и вывод результата должны быть на отдельных строках.
 
+# Решение:
 
+class Counter:
+    def __init__(self, count = 0):
+        self.count = count
+
+    def increment(self):
+        self.count += 1
+        return self.count
+
+    def decrement(self):
+        self.count -= 1
+        return self.count
+
+    def reset(self):
+        self.count = 0
+        return  "Сброс выполнен"
+
+counter_1 = Counter()
+
+print(counter_1.increment())
+print(counter_1.increment())
+print(counter_1.increment())
+
+print(counter_1.decrement())
+
+print(counter_1.reset())
+
+print(counter_1.increment())
