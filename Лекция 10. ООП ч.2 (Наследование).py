@@ -67,6 +67,76 @@ my_car = Car("Toyota", "Camry")
 my_car.start()
 
 
+# Задача №3 по наследованию (базовый уровень)
+#
+# Создайте базовый класс Transport с:
+#  Конструктором __init__, принимающим brand (марка) и сохраняющим его в атрибут.
+#  Методом move, который выводит: "Транспорт движется".
+#
+# Создайте дочерний класс Bus, который наследуется от Transport.
+#  Переопределите метод move так, чтобы он выводил: "Автобус {brand} везёт пассажиров".
+#
+# Создайте объект класса Bus с маркой "Mercedes".
+#
+# Вызовите метод move для этого объекта.
+
+# Решение:
+
+class Transport:
+    def __init__(self, brand):
+        self.brand = brand
+    def move(self):
+        print(f"Транспорт движется")
+
+class Bus(Transport):
+    def move(self):
+        print(f"Автобус {self.brand} везёт пассажиров")
+
+Bus_1 = Bus("Mercedes")
+Bus_1.move()
+
+
+# Задача №4 по наследованию (базовый уровень)
+#
+# Создайте базовый класс Device с:
+#  Конструктором __init__, принимающим name (название устройства) и сохраняющим его в атрибут.
+#  Методом turn_on, который выводит: "Устройство включено".
+#
+# Создайте дочерний класс Laptop, который наследуется от Device.
+#  Добавьте в конструктор параметр battery_level (уровень заряда) и сохраните его как атрибут.
+#  В конструкторе дочернего класса вызовите конструктор родителя, передав ему name.
+#  Переопределите метод turn_on так, чтобы он:
+#
+#   Сначала вызывал метод turn_on родителя (через super()).
+#   Затем выводил дополнительную строку: "Ноутбук {name} готов к работе, заряд: {battery_level}%".
+#
+# Создайте объект класса Laptop с названием "Dell XPS" и уровнем заряда 85.
+#
+# Вызовите метод turn_on для этого объекта.
+
+# Решение:
+
+class Device:
+    def __init__(self, brand):
+        self.brand = brand
+
+    def turn_on(self):
+        print(f"Устройство включено")
+
+class Laptop(Device):
+    def __init__(self, brand,  battery_level):
+        super().__init__(brand)
+        self.battery_level = battery_level
+
+    def turn_on(self):
+        super().turn_on()
+        print(f"Ноутбук {self.brand} готов к работе, заряд: {self.battery_level}%")
+
+my_laptop = Laptop("Dell XPS", 85)
+my_laptop.turn_on()
+
+
+
 
 
 
