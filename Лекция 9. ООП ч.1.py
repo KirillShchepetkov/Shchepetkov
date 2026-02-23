@@ -275,3 +275,89 @@ print(book_1.borrow())
 book_1.return_book()
 
 print(book_1.borrow())
+
+
+# Задача №7 по ООП часть 1 (Раздел: Создание класса, конструктор init, объект класса)
+#
+# Создайте класс Song.
+#
+# В конструкторе __init__ определите следующие атрибуты:
+#  title — название песни
+#  artist — исполнитель
+#  duration — длительность в секундах (целое число)
+#
+# Создайте метод info, который возвращает строку в формате:
+# "{title} - {artist} ({duration} сек)"
+#
+# Создайте объект класса Song с любой песней (например, "Imagine", "John Lennon", 183).
+#
+# Вызовите метод info для этого объекта и выведите результат на экран.
+
+# Решение:
+
+class Song:
+    def __init__(self , title, artist, duration):
+        self.title = title
+        self.artist = artist
+        self.duration = duration
+
+    def info(self):
+        return f"{self.title} - {self.artist} ({self.duration} сек)"
+
+my_song = Song("Imagine", "John Lennon", 183)
+print(my_song.info())
+
+
+# Задача №8 по ООП часть 1 (Раздел: Общие атрибуты и методы)
+#
+# Создайте класс Library.
+#
+# Добавьте в класс общий атрибут total_books со значением 0.
+# Этот атрибут будет считать общее количество книг во всех библиотеках.
+#
+#
+# В конструкторе __init__:
+#  Принимайте параметры self, name и address.
+#  Сохраняйте name и address как атрибуты экземпляра.
+#  Увеличивайте общий атрибут total_books на 1 при создании каждого нового объекта.
+#
+# Создайте метод display_info, который выводит на экран:
+# "Библиотека: {name}, адрес: {address}"
+#
+# Создайте метод класса get_total_books, который возвращает текущее значение total_books.
+#
+# Создайте три объекта класса Library с разными названиями и адресами.
+#
+# Для каждого объекта вызовите метод display_info.
+#
+# Вызовите метод класса get_total_books и выведите результат на экран.
+#
+# Подсказка: Для метода класса используйте декоратор @classmethod.
+
+
+# Решение:
+
+class Library:
+    total_books = 0
+    def __init__(self, name, address):
+        self.name = name
+        self.address = address
+        Library.total_books += 1
+
+    def  display_info(self):
+        print(f"Библиотека: {self.name}, адрес: {self.address}")
+
+    @classmethod
+    def get_total_books(cls):
+        return cls.total_books
+
+book_1 = Library("John", "street_1")
+book_1.display_info()
+
+book_2 = Library("Steve", "street_2")
+book_2.display_info()
+
+book_3 = Library("Louis", "street_3")
+book_3.display_info()
+
+print(Library.get_total_books())
