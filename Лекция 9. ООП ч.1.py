@@ -361,3 +361,69 @@ book_3 = Library("Louis", "street_3")
 book_3.display_info()
 
 print(Library.get_total_books())
+
+
+# Задача №9 по ООП часть 1 (Раздел: Понимание параметра self)
+#
+# Создайте класс BankAccount.
+#
+# В конструкторе __init__ определите следующие атрибуты:
+#  owner — владелец счёта
+#  balance — баланс (по умолчанию 0)
+#
+# Создайте метод deposit, который:
+#  Принимает сумму amount для пополнения.
+#  Увеличивает баланс на эту сумму.
+#  Возвращает новое значение баланса.
+#
+# Создайте метод withdraw, который:
+#  Принимает сумму amount для снятия.
+#  Если на счёте достаточно средств (balance >= amount), уменьшает баланс и возвращает новое значение баланса.
+#  Если средств недостаточно, возвращает строку "Недостаточно средств".
+#
+# Создайте метод display_balance, который выводит на экран:
+# "Владелец: {owner}, баланс: {balance} руб."
+#
+# Создайте объект класса BankAccount с владельцем "Иван" и начальным балансом 1000.
+#
+# Выполните последовательно:
+#  Вызовите display_balance.
+#  Пополните счёт на 500 и выведите результат (новый баланс).
+#  Снимите 300 и выведите результат.
+#  Снимите 1500 и выведите результат.
+#  Снова вызовите display_balance.
+
+# Решение:
+
+class BankAccount:
+    def __init__(self, owner, balance = 0):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        return self.balance
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+            return self.balance
+        else:
+            return "Недостаточно средств"
+
+    def display_balance(self):
+        print(f"Владелец: {self.owner}, баланс: {self.balance} руб.")
+
+user = BankAccount("Иван", 1000)
+
+user.display_balance()
+
+print(user.deposit(500))
+
+print(user.withdraw(300))
+
+print(user.withdraw(1500))
+
+user.display_balance()
+
+
