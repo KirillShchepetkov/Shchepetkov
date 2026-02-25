@@ -135,6 +135,35 @@ class Laptop(Device):
 my_laptop = Laptop("Dell XPS", 85)
 my_laptop.turn_on()
 
+# Задача №5 по ООП часть 2 (Наследование — простое)
+#
+# Создайте базовый класс App с:
+#  Конструктором __init__, принимающим name (название приложения) и сохраняющим его в атрибут.
+#  Методом run, который выводит: "Запуск приложения {name}".
+#
+# Создайте дочерний класс BrowserApp, который наследуется от App.
+#  Переопределите метод run так, чтобы он выводил: "Запуск браузера {name}".
+#
+# Создайте объект класса BrowserApp с названием "Chrome".
+#
+# Вызовите метод run для этого объекта.
+
+#   Решение:
+
+class App:
+    def __init__(self, name):
+        self.name = name
+
+    def run(self):
+        print(f"Запуск приложения {self.name}")
+
+class BrowserApp(App):
+    def run(self):
+        print(f"Запуск браузера {self.name}")
+
+Chrome_1 = BrowserApp("Chrome")
+Chrome_1.run()
+
 
 
 
