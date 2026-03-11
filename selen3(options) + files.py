@@ -38,10 +38,17 @@ INPUT_FIELD = ("xpath", "//div[contains(@class, 'content-part_4d929')]//textarea
 driver.find_element(*INPUT_FIELD).send_keys("1 автотест")
 time.sleep(4)
 
+element_to_scroll = driver.find_element(By.XPATH, "//input[@placeholder='ДД.ММ.ГГ']")
+driver.execute_script("arguments[0].scrollIntoView(true);", element_to_scroll)
+time.sleep(1)
+
 driver.execute_script("arguments[0].value = '20.03.26';", driver.find_elements(By.XPATH, "//input[@placeholder='ДД.ММ.ГГ']")[1])
 time.sleep(4)
 
 driver.execute_script("arguments[0].value = '19:00';", driver.find_elements(By.XPATH, "//input[@placeholder='ЧЧ.ММ']")[1])
+time.sleep(4)
+
+driver.execute_script("arguments[0].value = '21.03.2026 — 21.03.2026';", driver.find_elements(By.XPATH, "//input[@placeholder='ДД.ММ.ГГГГ – ДД.ММ.ГГГГ']")[0])
 time.sleep(4)
 
 
