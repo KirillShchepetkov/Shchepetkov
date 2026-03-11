@@ -38,25 +38,11 @@ INPUT_FIELD = ("xpath", "//div[contains(@class, 'content-part_4d929')]//textarea
 driver.find_element(*INPUT_FIELD).send_keys("1 автотест")
 time.sleep(4)
 
-print("🔍 Ввод даты во второе поле...")
-
-date_fields = driver.find_elements(By.XPATH, "//input[@placeholder='ДД.ММ.ГГ']")
-print(f"Найдено полей даты: {len(date_fields)}")
-
-if len(date_fields) >= 2:
-    # Вводим дату во ВТОРОЕ поле (индекс 1)
-    driver.execute_script("arguments[0].value = '11.03.26';", date_fields[1])
-    driver.execute_script("arguments[0].dispatchEvent(new Event('change', { bubbles: true }));", date_fields[1])
-    print("✅ Дата 11.03.26 введена во второе поле")
-elif len(date_fields) == 1:
-    # Если только одно поле
-    driver.execute_script("arguments[0].value = '11.03.26';", date_fields[0])
-    driver.execute_script("arguments[0].dispatchEvent(new Event('change', { bubbles: true }));", date_fields[0])
-    print("✅ Дата 11.03.26 введена (единственное поле)")
-else:
-    print("❌ Не найдено полей даты")
+driver.execute_script("arguments[0].value = '20.03.26';", driver.find_elements(By.XPATH, "//input[@placeholder='ДД.ММ.ГГ']")[1])
 time.sleep(4)
 
+driver.execute_script("arguments[0].value = '19:00';", driver.find_elements(By.XPATH, "//input[@placeholder='ЧЧ.ММ']")[1])
+time.sleep(4)
 
 
 
