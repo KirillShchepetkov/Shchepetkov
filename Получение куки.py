@@ -9,6 +9,8 @@ cookies = driver.get_cookies()
 with open('cookies.json', 'w') as file:
     json.dump(cookies, file, indent=4)
 
+    # Получение куки
+
 
 
 
