@@ -83,6 +83,16 @@ wait.until(EC.presence_of_element_located(Postal_Code)).clear()
 wait.until(EC.presence_of_element_located(Postal_Code)).send_keys("4712")
 
 # 15.Прожимаем continue
-Сontinue_click = 
+Сontinue_click = ("xpath", "//input[@data-test='continue']")
+wait.until(EC.element_to_be_clickable(Сontinue_click)).click()
 
-time.sleep(7)
+# 16.Ассерт на нужный Урл continue
+assert driver.current_url == "https://www.saucedemo.com/checkout-step-two.html", "Неправильный URL continue"
+
+# 17.Прожимаем Finish
+Finish_click = ("xpath", "//button[@data-test='finish']")
+wait.until(EC.element_to_be_clickable(Finish_click)).click()
+
+# 18.Ассерт на нужный Урл Finish
+assert driver.current_url == "https://www.saucedemo.com/checkout-complete.html", "Неправильный URL Finish"
+time.sleep(5)
