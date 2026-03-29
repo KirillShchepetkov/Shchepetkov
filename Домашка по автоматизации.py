@@ -43,10 +43,46 @@ Backpack = ("xpath", "//button[@data-test='add-to-cart-sauce-labs-backpack']")
 wait.until(EC.element_to_be_clickable(Backpack)).click()
 
 
+# 8.Выбираем фонарь велосипеда
+Bike_light = ("xpath", "//button[@data-test='add-to-cart-sauce-labs-bike-light']")
+wait.until(EC.element_to_be_clickable(Bike_light)).click()
 
-time.sleep(6)
+# 9.Выбираем красную кофту
+Red_t_shirt = ("xpath", "//button[@data-test='add-to-cart-test.allthethings()-t-shirt-(red)']")
+wait.until(EC.element_to_be_clickable(Red_t_shirt)).click()
+
+# 10.Проваливаемся в корзину
+Cart_link = ("xpath", "//a[@data-test='shopping-cart-link']")
+wait.until(EC.element_to_be_clickable(Cart_link)).click()
 
 
+# 11.Ассерт на нужный Урл корзины
+assert driver.current_url == "https://www.saucedemo.com/cart.html", "Неправильный URL корзины"
 
 
+# 12.Прожимаем  чекаут
+Checkout = ("xpath", "//button[@data-test='checkout']")
+wait.until(EC.element_to_be_clickable(Checkout)).click()
 
+# 13.Ассерт на нужный Урл чекаут
+assert driver.current_url == "https://www.saucedemo.com/checkout-step-one.html", "Неправильный URL чекаут"
+
+# 14.Заполнение Имени, Фамилии, Кода
+First_name = ("xpath", "//input[@data-test='firstName']")
+wait.until(EC.presence_of_element_located(First_name)).clear()
+wait.until(EC.presence_of_element_located(First_name)).send_keys("Kirill")
+
+
+Last_Name = ("xpath", "//input[@data-test='lastName']")
+wait.until(EC.presence_of_element_located(Last_Name)).clear()
+wait.until(EC.presence_of_element_located(Last_Name)).send_keys("Shchepetkov")
+
+
+Postal_Code = ("xpath", "//input[@data-test='postalCode']")
+wait.until(EC.presence_of_element_located(Postal_Code)).clear()
+wait.until(EC.presence_of_element_located(Postal_Code)).send_keys("4712")
+
+# 15.Прожимаем continue
+Сontinue_click = 
+
+time.sleep(7)
