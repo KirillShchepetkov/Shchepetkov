@@ -1,12 +1,1 @@
-[
-    {
-        "domain": "stagingpartner.strana.com",
-        "expiry": 1805571877,
-        "httpOnly": false,
-        "name": "cookiesAcceptedStrana",
-        "path": "/",
-        "sameSite": "Lax",
-        "secure": false,
-        "value": "true"
-    }
-]
+[]
