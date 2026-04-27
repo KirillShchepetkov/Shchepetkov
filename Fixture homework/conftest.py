@@ -1,11 +1,14 @@
+import os
 import pytest
-from faker import Faker
-faker = Faker()
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
 
 @pytest.fixture()
-def user():
-
-    username = faker.user_name()
-    return username
-
-
+def driver(request):
+    chrome_options = Options()
+    chrome_options.add_experimental_option("excludeSwitches",["enable-logging"])
+    driver = webdriver.Chrome(options=chrome_options)
+    request.cls.driver = driver
+    yield
+    driver.quit()
