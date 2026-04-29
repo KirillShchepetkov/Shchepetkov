@@ -66,8 +66,7 @@ class TestAuth:
         @pytest.mark.usefixtures("Login_saucedemo")
         def test_inventory_login(self):
             with allure.step("Кликабельность кнопки добавления товара"):
-                button_price = self.driver.find_element("xpath",
-                                                        "//button[@data-test='add-to-cart-sauce-labs-backpack']")
+                button_price = self.driver.find_element("xpath","//button[@data-test='add-to-cart-sauce-labs-backpack']")
                 button_price.click()
             with allure.step("Проверка на изменение названия кнопки Remove"):
                 remove_button = self.driver.find_elements("xpath", "//button[@data-test='remove-sauce-labs-backpack']")
@@ -143,7 +142,7 @@ class TestAuth:
 
             with allure.step("Ввод данных"):
                 self.driver.find_element("xpath", "//input[@name='firstName']").send_keys("Test")
-                self.driver.find_element("xpath", "//input[@name='lastName']").send_keys("Testovich")
+                self.driver.find_element("xpath", "//input[@name='lastName']").send_keys("Testovsh")
                 self.driver.find_element("xpath", "//input[@name='postalCode']").send_keys("320530")
                 allure.attach(
                     body=self.driver.get_screenshot_as_png(),
