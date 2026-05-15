@@ -37,3 +37,29 @@ class TestInventory(BaseTest):
         self.inventory_page.remove_product_from_cart()
         assert self.inventory_page.get_cart_count() == 0
         self.attach_screenshot("cart_badge_count_0")
+
+    @allure.title("Add Sauce Labs Bike Light to cart")
+    @allure.severity(Severity.NORMAL)
+    def test_add_bike_light_to_cart(self):
+        """Тест добавления Bike Light в корзину"""
+        self.login_as_standard_user()
+        self.inventory_page.add_bike_light_to_cart()
+
+        assert self.inventory_page.get_cart_count() == 1
+        self.attach_screenshot("bike_light_cart")
+
+        cart_page = self.inventory_page.open_cart()
+        assert "Sauce Labs Bike Light" in cart_page.get_product_names()
+
+    @allure.title("Add Sauce Labs Onesie to cart")
+    @allure.severity(Severity.NORMAL)
+    def test_add_onesie_to_cart(self):
+         """Тест добавления Sauce Labs Onesie в корзину"""
+         self.login_as_standard_user()
+         self.inventory_page.add_onesie_to_cart()
+
+         assert self.inventory_page.get_cart_count() == 1
+         self.attach_screenshot("onesie_to_cart")
+
+         cart_page = self.inventory_page.open_cart()
+         assert "Sauce Labs Onesie" in cart_page.get_product_names()

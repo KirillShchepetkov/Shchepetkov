@@ -1,4 +1,4 @@
-# pages/inventory_page.py
+
 import allure
 from selenium.webdriver.common.by import By
 from base.base_page import BasePage
@@ -15,6 +15,11 @@ class InventoryPage(BasePage):
     _CART_BADGE = (By.CLASS_NAME, "shopping_cart_badge")
     _CART_LINK = (By.XPATH, "//*[@data-test='shopping-cart-link']")
     _PRODUCT_NAME = (By.CLASS_NAME, "inventory_item_name")
+    _ADD_TO_CART_BIKE_LIGHT = (By.XPATH, "//button[@data-test='add-to-cart-sauce-labs-bike-light']")
+    _REMOVE_BIKE_LIGHT = (By.XPATH, "//button[@data-test='remove-sauce-labs-bike-light']")
+    _ADD_TO_CART_Sauce_Labs_Onesie = (By.XPATH, "//button[@data-test='add-to-cart-sauce-labs-onesie']")
+    _REMOVE_Sauce_Labs_Onesie = (By.XPATH, "//button[@data-test='remove-sauce-labs-onesie']")
+
 
     @allure.step("Add product to cart")
     def add_product_to_cart(self) -> 'InventoryPage':
@@ -51,6 +56,22 @@ class InventoryPage(BasePage):
         """Получить список названий товаров"""
         products = self.get_elements(self._PRODUCT_NAME)
         return [product.text for product in products]
+
+    #  НОВЫЙ метод для Bike Light
+    @allure.step("Add Bike Light to cart")
+    def add_bike_light_to_cart(self) -> 'InventoryPage':
+        self.click(self._ADD_TO_CART_BIKE_LIGHT)
+        self.attach_screenshot("bike_light_added")
+        return self
+
+    #  НОВЫЙ метод для Sauce Labs Onesie
+    @allure.step("Add Sauce Labs Onesie to cart")
+    def add_sauce_labs_onesie_to_cart(self) -> 'InventoryPage':
+        self.click(self._ADD_TO_CART_Sauce_Labs_Onesie)
+        self.attach_screenshot("sauce_labs_onesie_added")
+        return self
+
+
 
     def is_inventory_displayed(self) -> bool:
         """Проверить отображение страницы инвентаря"""

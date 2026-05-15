@@ -51,5 +51,13 @@ class TestLogin(BaseTest):
         assert "Username and password do not match" in self.login_page.get_error_message()
         self.attach_screenshot("invalid_login_error")
 
-# Команда для запуска
-# $env:STAGE="dev";pytest --alluredir=allureresults
+
+# Запуск всех тестов
+# pytest test/ -v
+#
+# # Запуск конкретного теста
+# pytest test/test_login.py -v
+#
+# # Запуск с Allure
+# pytest test/ --alluredir=allure-results
+# allure serve allure-results
