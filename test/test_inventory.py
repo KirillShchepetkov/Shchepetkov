@@ -56,7 +56,7 @@ class TestInventory(BaseTest):
     def test_add_onesie_to_cart(self):
          """Тест добавления Sauce Labs Onesie в корзину"""
          self.login_as_standard_user()
-         self.inventory_page.add_onesie_to_cart()
+         self.inventory_page.add_sauce_labs_onesie_to_cart()
 
          assert self.inventory_page.get_cart_count() == 1
          self.attach_screenshot("onesie_to_cart")

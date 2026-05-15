@@ -17,8 +17,8 @@ class InventoryPage(BasePage):
     _PRODUCT_NAME = (By.CLASS_NAME, "inventory_item_name")
     _ADD_TO_CART_BIKE_LIGHT = (By.XPATH, "//button[@data-test='add-to-cart-sauce-labs-bike-light']")
     _REMOVE_BIKE_LIGHT = (By.XPATH, "//button[@data-test='remove-sauce-labs-bike-light']")
-    _ADD_TO_CART_Sauce_Labs_Onesie = (By.XPATH, "//button[@data-test='add-to-cart-sauce-labs-onesie']")
-    _REMOVE_Sauce_Labs_Onesie = (By.XPATH, "//button[@data-test='remove-sauce-labs-onesie']")
+    _ADD_TO_CART_ONESIE = (By.XPATH, "//button[@data-test='add-to-cart-sauce-labs-onesie']")
+    _REMOVE_ONESIE = (By.XPATH, "//button[@data-test='remove-sauce-labs-onesie']")
 
 
     @allure.step("Add product to cart")
@@ -67,10 +67,16 @@ class InventoryPage(BasePage):
     #  НОВЫЙ метод для Sauce Labs Onesie
     @allure.step("Add Sauce Labs Onesie to cart")
     def add_sauce_labs_onesie_to_cart(self) -> 'InventoryPage':
-        self.click(self._ADD_TO_CART_Sauce_Labs_Onesie)
-        self.attach_screenshot("sauce_labs_onesie_added")
+        self.click(self._ADD_TO_CART_ONESIE)
+        self.attach_screenshot("onesie_added_to_cart")
         return self
 
+    @allure.step("Remove Sauce Labs Onesie from cart")
+    def remove_onesie_from_cart(self) -> 'InventoryPage':
+        """Удалить Sauce Labs Onesie из корзины"""
+        if self.is_element_visible(self._REMOVE_ONESIE):
+            self.click(self._REMOVE_ONESIE)
+        return self
 
 
     def is_inventory_displayed(self) -> bool:
